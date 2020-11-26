@@ -10,11 +10,14 @@ let suggestions = [
     '\\frac{}{}', '\\sqrt{}', '\\sqrt[n]{}', '\\overline{}', '\\text{}',
 
     // Variable sized symbols
-    '\\sum_{k=1}^{n}', '\\prod_{k=1}^{n}', '\\int_{0}^{1}',
+    '\\sum_{k=1}^{n}', '\\prod_{k=1}^{n}', '\\int_{0}^{1}', '\\lim_{n\\to\\infty}', '\\bigcup', '\\bigcap',
 
     // Binary operations
-    '\\neq', '\\leq', '\\geq', '\\nleq', '\\ngeq', '\\subset', '\\subseteq', '\\supset', '\\supseteq',
+    '\\neq', '\\leq', '\\geq', '\\nleq', '\\ngeq', '\\subset', '\\subseteq', '\\supset', '\\supseteq', '\\wedge', '\\vee', '\\pm',
 
     // Arrows
-    '\\Rightarrow', '\\Leftarrow', '\\Leftrightarrow', '\\mapsto'
+    '\\Rightarrow', '\\Leftarrow', '\\Leftrightarrow', '\\mapsto',
+    
+    // Misc
+    '\\forall', '\\exists', '\\emptyset', '\\angle'
 ]
