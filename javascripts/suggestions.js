@@ -16,7 +16,7 @@ let suggestions = [
     '\\neq', '\\leq', '\\geq', '\\nleq', '\\ngeq', '\\subset', '\\subseteq', '\\supset', '\\supseteq', '\\wedge', '\\vee', '\\pm',
 
     // Arrows
-    '\\Rightarrow', '\\Leftarrow', '\\Leftrightarrow', '\\mapsto',
+    '\\Rightarrow', '\\Leftarrow', '\\Leftrightarrow', '\\mapsto', '\\nRightarrow', '\\nLeftarrow', '\\nLeftrightarrow',
     
     // Misc
     '\\forall', '\\exists', '\\emptyset', '\\angle'

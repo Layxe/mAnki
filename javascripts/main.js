@@ -22,6 +22,7 @@ $("#input").asuggest(suggestions, {
 let shortcuts = [
     ['<=>', '\\Leftrightarrow'],
     ['=>', '\\Rightarrow'],
+    ['<=', '\\Leftarrow'],
     ['->', '\\to'],
     ['|N', '\\mathbb{N}'],
     ['|Z', '\\mathbb{Z}'],
@@ -36,7 +37,8 @@ let replaceAllShortcuts = (code) => {
         console.log(code)
     })
 
-    input.value = code
+    // Remove the blank to recognize the shortcuts
+    input.value = code.substring(1)
 
     return code
 
@@ -44,7 +46,7 @@ let replaceAllShortcuts = (code) => {
 
 let replaceShortcut = (code, shortcut) => {
 
-    return code.replace(shortcut[0], shortcut[1])
+    return code.replace(' ' + shortcut[0] + ' ', ' ' + shortcut[1] + ' ')
 
 } 
 
@@ -55,7 +57,11 @@ let updateDisplay = () => {
 
     let code = input.value
 
-    // Replace possible shortcuts
+    // Add a space to the beginning so shortcuts will be recognized, because
+    // they need a blank before and after the string
+    code = ' ' + input.value
+
+    // Replace possible shortcuts, if the text is finished
     code = replaceAllShortcuts(code)
 
     // Render the code
