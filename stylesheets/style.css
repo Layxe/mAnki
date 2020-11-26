@@ -1,0 +1,8 @@
+html, body {
+    overflow-y: auto;
+    height: 100%;
+}
+
+.textarea {
+    height: 33vh !important;
+}
