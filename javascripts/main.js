@@ -58,14 +58,14 @@ let replaceShortcut = (code, shortcut) => {
 
 let updateDisplay = () => {
 
-    finishedLoading = false
-
     // Display loading icon
     if (finishedLoading)
         clipboardStatus.innerHTML = 
                 `<span class="icon has-text-danger">
                     <i class="fas fa-spinner fa-pulse"></i>
                 </span>`
+
+    finishedLoading = false
 
     clearTimeout(updateTimer)
 
@@ -107,7 +107,7 @@ let updateDisplay = () => {
                 finishedLoading = true
 
             })
-    }, 200)
+    }, 300)
 }
 
 input.addEventListener('keyup', updateDisplay)
