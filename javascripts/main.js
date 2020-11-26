@@ -30,7 +30,11 @@ let shortcuts = [
     ['|N', '\\mathbb{N}'],
     ['|Z', '\\mathbb{Z}'],
     ['|R', '\\mathbb{R}'],
-    ['|Q', '\\mathbb{Q}']
+    ['|Q', '\\mathbb{Q}'],
+    ['|C', '\\mathbb{C}'],
+    ['OO', '\\infty'],
+    ['&&', '\\wedge'],
+    ['||', '\\vee']
 ]
 
 let replaceAllShortcuts = (code) => {
