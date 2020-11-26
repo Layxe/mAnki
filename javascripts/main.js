@@ -4,6 +4,19 @@ let display = document.getElementById('display')
 let copyInput = document.getElementById('copy-input')
 let clipboardStatus = document.getElementById('clipboard-status')
 
+// Auto complete
+// #####################################################################################################################
+
+$("#input").asuggest(suggestions, {
+    'minChunkSize': 1,
+    'delimiters': ' \n',
+    'autoComplete': true,
+    'cycleOnTab': true
+})
+
+// Mathjax Rendering and clipboard
+// #####################################################################################################################
+
 let updateDisplay = () => {
 
     let code = input.value
