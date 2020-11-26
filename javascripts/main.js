@@ -11,8 +11,41 @@ $("#input").asuggest(suggestions, {
     'minChunkSize': 1,
     'delimiters': ' \n',
     'autoComplete': true,
+    'stopSuggestionKeys': [$.asuggestKeys.RETURN],
     'cycleOnTab': true
 })
+
+// Makro replacements
+// #####################################################################################################################
+
+let shortcuts = [
+    ['<=>', '\\Leftrightarrow'],
+    ['=>', '\\Rightarrow'],
+    ['->', '\\to'],
+    ['|N', '\\mathbb{N}'],
+    ['|Z', '\\mathbb{Z}'],
+    ['|R', '\\mathbb{R}'],
+    ['|Q', '\\mathbb{Q}']
+]
+
+let replaceAllShortcuts = (code) => {
+
+    shortcuts.forEach(shortcut => {
+        code = replaceShortcut(code, shortcut)
+        console.log(code)
+    })
+
+    input.value = code
+
+    return code
+
+}
+
+let replaceShortcut = (code, shortcut) => {
+
+    return code.replace(shortcut[0], shortcut[1])
+
+} 
 
 // Mathjax Rendering and clipboard
 // #####################################################################################################################
@@ -20,6 +53,9 @@ $("#input").asuggest(suggestions, {
 let updateDisplay = () => {
 
     let code = input.value
+
+    // Replace possible shortcuts
+    code = replaceAllShortcuts(code)
 
     // Render the code
     display.innerHTML = `\\[${code}\\]`
