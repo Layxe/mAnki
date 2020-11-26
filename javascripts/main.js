@@ -58,6 +58,9 @@ let replaceShortcut = (code, shortcut) => {
 
 let updateDisplay = () => {
 
+    finishedLoading = false
+
+    // Display loading icon
     if (finishedLoading)
         clipboardStatus.innerHTML = 
                 `<span class="icon has-text-danger">
@@ -68,21 +71,21 @@ let updateDisplay = () => {
 
     updateTimer = setTimeout(() => {
 
-    let code = input.value
+        let code = input.value
 
-    // Add a space to the beginning so shortcuts will be recognized, because
-    // they need a blank before and after the string
-    code = ' ' + input.value
+        // Add a space to the beginning so shortcuts will be recognized, because
+        // they need a blank before and after the string
+        code = ' ' + input.value
 
-    // Replace possible shortcuts, if the text is finished
-    code = replaceAllShortcuts(code)
+        // Replace possible shortcuts, if the text is finished
+        code = replaceAllShortcuts(code)
 
-    // Render the code
-    display.innerHTML = `\\[${code}\\]`
-    MathJax.typeset();
-    output.innerHTML = `\\[${code}\\]`
+        // Render the code
+        display.innerHTML = `\\[${code}\\]`
+        MathJax.typeset();
+        output.innerHTML = `\\[${code}\\]`
 
-    // Write mathjax code into the clipboard and display the status
+        // Write mathjax code into the clipboard and display the status
         navigator.clipboard.writeText(`\\[${code}\\]`)
             .catch((err) => {
 
