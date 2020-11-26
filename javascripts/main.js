@@ -4,7 +4,7 @@ let display = document.getElementById('display')
 let copyInput = document.getElementById('copy-input')
 let clipboardStatus = document.getElementById('clipboard-status')
 
-let copyTimer = setTimeout(() => {}, 0)
+let updateTimer = setTimeout(() => {}, 0)
 let finishedLoading = false;
 
 // Auto complete
@@ -58,6 +58,16 @@ let replaceShortcut = (code, shortcut) => {
 
 let updateDisplay = () => {
 
+    if (finishedLoading)
+        clipboardStatus.innerHTML = 
+                `<span class="icon has-text-danger">
+                    <i class="fas fa-spinner fa-pulse"></i>
+                </span>`
+
+    clearTimeout(updateTimer)
+
+    updateTimer = setTimeout(() => {
+
     let code = input.value
 
     // Add a space to the beginning so shortcuts will be recognized, because
@@ -72,16 +82,7 @@ let updateDisplay = () => {
     MathJax.typeset();
     output.innerHTML = `\\[${code}\\]`
 
-    if (finishedLoading)
-        clipboardStatus.innerHTML = 
-                `<span class="icon has-text-danger">
-                    <i class="fas fa-spinner fa-pulse"></i>
-                </span>`
-
-    clearTimeout(copyTimer)
-    
     // Write mathjax code into the clipboard and display the status
-    copyTimer = setTimeout(() => {
         navigator.clipboard.writeText(`\\[${code}\\]`)
             .catch((err) => {
 
@@ -103,7 +104,7 @@ let updateDisplay = () => {
                 finishedLoading = true
 
             })
-    }, 500)
+    }, 200)
 }
 
 input.addEventListener('keyup', updateDisplay)
