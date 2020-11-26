@@ -41,7 +41,6 @@ let replaceAllShortcuts = (code) => {
 
     shortcuts.forEach(shortcut => {
         code = replaceShortcut(code, shortcut)
-        console.log(code)
     })
 
     // Remove the blank to recognize the shortcuts
