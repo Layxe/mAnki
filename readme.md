@@ -1,6 +1,6 @@
 # [m]ath Anki
 
-Is a tool developed to easly create Mathjax flashcards which can be used by Anki (or every program, supporting the Mathjax Syntax)
+Is a tool developed to easily create Mathjax syntax, which then can be used by Anki (or every other program supporting the Mathjax syntax)
 
 # How to use
 
