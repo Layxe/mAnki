@@ -1,4 +1,4 @@
-# [m]ath Anki
+# [m]ath Anki ![Alt-Text](https://github.com/Layxe/mAnki/blob/main/img/manki.png?raw=true)
 
 Is a tool developed to easily create Mathjax syntax, which then can be used by Anki (or every other program supporting the Mathjax syntax)
 
