@@ -2,7 +2,7 @@
 
 Is a tool developed to easily create Mathjax syntax, which then can be used by Anki (or every other program supporting the Mathjax syntax)
 
-![](https://github.com/Layxe/mAnki/blob/main/img/Showcase.jpg?raw=true)
+![](https://github.com/Layxe/mAnki/blob/main/img/img.jpg?raw=true)
 
 # How to use
 
