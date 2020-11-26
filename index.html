@@ -38,10 +38,32 @@
             <div class="message-header">
                 <p>MathJax Code - In clipboard: 
                     <span id="clipboard-status">
+                        <span class="icon has-text-danger">
+                            <i class="fas fa-spinner fa-pulse"></i>
+                        </span>
                     </span>
                 </p>
             </div>
             <div class="message-body" id="output">
+            </div>
+        </article>
+        <article class="message">
+            <div class="message-header">
+                <p>Shortcuts</p>
+            </div>
+            <div class="message-body" id="output">
+                <table class="table is-bordered is-fullwidth">
+                    <thead>
+                        <th>Input</th>
+                        <th>Output</th>
+                    </thead>
+                    <tbody>
+                        <tr><td>=></td><td>\(\Rightarrow\)</td></tr>
+                        <tr><td><=></td><td>\(\Leftrightarrow\)</td></tr>
+                        <tr><td>-></td><td>\(\to\)</td></tr>
+                        <tr><td>|N, |Z, |Q, |R, |C</td><td>\(\mathbb{N, Z, Q, R, C}\)</td></tr>
+                    </tbody>
+                </table>
             </div>
         </article>
         <script src="javascripts/suggestions.js"></script>

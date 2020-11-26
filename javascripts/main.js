@@ -12,7 +12,8 @@ $("#input").asuggest(suggestions, {
     'delimiters': ' \n',
     'autoComplete': true,
     'stopSuggestionKeys': [$.asuggestKeys.RETURN],
-    'cycleOnTab': true
+    'cycleOnTab': true,
+    'endingSymbols': ''
 })
 
 // Makro replacements
