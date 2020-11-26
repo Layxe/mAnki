@@ -4,6 +4,9 @@ let display = document.getElementById('display')
 let copyInput = document.getElementById('copy-input')
 let clipboardStatus = document.getElementById('clipboard-status')
 
+let copyTimer = setTimeout(() => {}, 0)
+let finishedLoading = false;
+
 // Auto complete
 // #####################################################################################################################
 
@@ -69,30 +72,38 @@ let updateDisplay = () => {
     MathJax.typeset();
     output.innerHTML = `\\[${code}\\]`
 
-    clipboardStatus.innerHTML = 
-            `<span class="icon has-text-danger">
-                <i class="fas fa-spinner fa-pulse"></i>
-            </span>`
+    if (finishedLoading)
+        clipboardStatus.innerHTML = 
+                `<span class="icon has-text-danger">
+                    <i class="fas fa-spinner fa-pulse"></i>
+                </span>`
+
+    clearTimeout(copyTimer)
     
     // Write mathjax code into the clipboard and display the status
-    navigator.clipboard.writeText(`\\[${code}\\]`)
-        .catch((err) => {
+    copyTimer = setTimeout(() => {
+        navigator.clipboard.writeText(`\\[${code}\\]`)
+            .catch((err) => {
 
-            clipboardStatus.innerHTML = 
-            `<span class="icon has-text-danger">
-                <i class="fas fa-ban"></i>
-            </span>`
+                clipboardStatus.innerHTML = 
+                `<span class="icon has-text-danger">
+                    <i class="fas fa-ban"></i>
+                </span>`
 
-        })
-        .then((res) => {
+                finishedLoading = true
 
-            clipboardStatus.innerHTML = 
-            `<span class="icon has-text-success">
-                <i class="fas fa-check-square"></i>
-            </span>`
+            })
+            .then((res) => {
 
-        })
+                clipboardStatus.innerHTML = 
+                `<span class="icon has-text-success">
+                    <i class="fas fa-check-square"></i>
+                </span>`
 
+                finishedLoading = true
+
+            })
+    }, 500)
 }
 
 input.addEventListener('keyup', updateDisplay)
