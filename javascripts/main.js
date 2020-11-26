@@ -111,7 +111,7 @@ let updateDisplay = () => {
                 finishedLoading = true
 
             })
-    }, 300)
+    }, 500)
 }
 
 input.addEventListener('keyup', updateDisplay)
