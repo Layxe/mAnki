@@ -10,6 +10,7 @@
 
         <link rel="stylesheet" type="text/css" href="stylesheets/bulma.css">
         <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
 
         <!-- Javascripts -->
         <!-- ####################################################################################################### -->
@@ -29,15 +30,20 @@
         </div>
         <article class="message">
             <div class="message-header">
-                <p>Ausgabe</p>
+                <p>Output</p>
             </div>
             <div class="message-body" id="display"></div>
         </article>
         <article class="message">
             <div class="message-header">
-                <p>MathJax Code</p>
+                <p>MathJax Code - In clipboard: 
+                    <span id="clipboard-status">
+                    </span>
+                </p>
             </div>
-            <div class="message-body" id="display"></div>
+            <div class="message-body" id="output">
+            </div>
         </article>
+        <script src="javascripts/main.js"></script>
     </body>
 </html>
